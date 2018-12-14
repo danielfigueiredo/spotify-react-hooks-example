@@ -2,9 +2,12 @@ import { Config } from './config.types';
 
 export const getProcessEnv = (): any => process.env;
 
-export const configFactory = (getEnvironmentVariables: () => any) => (): Config => getEnvironmentVariables();
+export const configFactory = (getEnvironmentVariables: () => any) => (): Config =>
+  getEnvironmentVariables();
 
 export const getConfig = configFactory(getProcessEnv);
+
+export const APP_URL = getConfig().REACT_APP_URL;
 
 export const API_CLIENT_ID = getConfig().REACT_APP_API_CLIENT_ID;
 

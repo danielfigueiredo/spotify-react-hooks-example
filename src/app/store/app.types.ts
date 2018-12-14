@@ -1,11 +1,10 @@
 import { ReducersMapObject } from 'redux';
-import {
-  IUserActions,
-  IUserState,
-} from '../../core/user/user.types';
+import { PersistPartial } from 'redux-persist';
+
+import { IUserActions, IUserState } from 'src/core/user/user.types';
 
 export type IState = {
-  readonly user: IUserState;
+  readonly user: IUserState & PersistPartial;
 };
 
 export type IActions = IUserActions;

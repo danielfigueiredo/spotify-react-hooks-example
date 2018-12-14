@@ -1,12 +1,10 @@
 import { createService } from '../service';
-import { postJSON } from '../../utils/service';
-import {
-  API_CLIENT_ID,
-  API_CLIENT_SECRET,
-  getLoginRedirectURL,
-} from '../../utils/config';
+
+import { postJSON } from 'src/utils/service';
+import { API_CLIENT_ID, API_CLIENT_SECRET, getLoginRedirectURL } from 'src/utils/config';
+import { IUserToken } from 'src/core/user/user.types';
+
 import { TokenResponseBody } from './token.types';
-import { IUserToken } from '../../core/user/user.types';
 
 const tokenRequester = (authorizationCode: string) => {
   const form = {
