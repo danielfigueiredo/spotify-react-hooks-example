@@ -4,6 +4,7 @@ NODE_PATH=./
 REACT_APP_URL=http://localhost:3000
 REACT_APP_API_CLIENT_ID=<value>
 REACT_APP_API_CLIENT_SECRET=<value>
+REACT_APP_LOGIN_REDIRECT_PATH=/login/success
 ```
 
 ## Available Scripts
