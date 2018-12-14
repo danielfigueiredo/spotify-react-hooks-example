@@ -7,7 +7,6 @@ export const configFactory = (getEnvironmentVariables: () => any) => (): Config 
 
 export const getConfig = configFactory(getProcessEnv);
 
-export const APP_URL = getConfig().REACT_APP_URL;
 
 export const API_CLIENT_ID = getConfig().REACT_APP_API_CLIENT_ID;
 

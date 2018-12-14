@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Environment file
+```
+NODE_PATH=./
+REACT_APP_URL=http://localhost:3000
+REACT_APP_API_CLIENT_ID=<value>
+REACT_APP_API_CLIENT_SECRET=<value>
+```
 
 ## Available Scripts
 
