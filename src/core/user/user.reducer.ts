@@ -1,10 +1,5 @@
 import { Reducer } from 'redux';
-import {
-  IUserActions,
-  UserActionTypes,
-  IUserState,
-} from './user.types';
-
+import { IUserActions, UserActionTypes, IUserState } from './user.types';
 
 export const initialUserState: IUserState = {
   userToken: {
@@ -13,10 +8,13 @@ export const initialUserState: IUserState = {
     expiresIn: 0,
     refreshToken: '',
     scope: '',
-  }
+  },
 };
 
-export const userReducer: Reducer<IUserState, IUserActions> = (state = initialUserState, action) => {
+export const userReducer: Reducer<IUserState, IUserActions> = (
+  state = initialUserState,
+  action,
+) => {
   switch (action.type) {
     case UserActionTypes.SET_USER_TOKEN:
       return { ...state, userToken: action.payload };
