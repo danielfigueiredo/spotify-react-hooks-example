@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/redux": "^3.6.0",
-    "@types/redux-logger": "^3.0.6",
-    "@types/redux-persist": "^4.3.1",
-    "@types/reselect": "^2.2.0",
-    "es6-promise": "^4.2.5",
     "isomorphic-fetch": "^2.2.1",
     "prettier": "^1.15.3",
     "qs": "^6.6.0",
@@ -39,8 +34,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://accounts.spotify.com",
   "devDependencies": {
+    "@types/core-js": "^2.5.0",
     "@types/isomorphic-fetch": "^0.0.34",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.11",
@@ -48,6 +43,11 @@
     "@types/react": "^16.7.11",
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.11",
-    "@types/react-router-dom": "^4.3.1"
+    "@types/react-router-dom": "^4.3.1",
+    "@types/redux": "^3.6.0",
+    "@types/redux-logger": "^3.0.6",
+    "@types/redux-persist": "^4.3.1",
+    "@types/reselect": "^2.2.0",
+    "http-proxy-middleware": "^0.19.1"
   }
 }

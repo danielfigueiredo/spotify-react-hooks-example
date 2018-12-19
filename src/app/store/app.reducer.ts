@@ -2,10 +2,14 @@ import { combineReducers, Reducer, Store } from 'redux';
 import { persistReducer, Persistor } from 'redux-persist';
 import sessionStorage from 'redux-persist/es/storage/session';
 
-import { ILoadedReducers, ILoadedState } from './app.types';
-
 import { userReducer } from 'src/core/user/user.reducer';
 import { IUserState } from 'src/core/user/user.types';
+
+import {
+  IActions,
+  ILoadedReducers,
+  ILoadedState,
+} from './app.types';
 
 let asyncReducers: ILoadedReducers = {};
 
@@ -16,7 +20,7 @@ const persistConfig = (key: string) => ({
 
 export const createRootReducer = (): Reducer<ILoadedState, any> => {
   const initialReducers: ILoadedReducers = {
-    user: persistReducer<IUserState, any>(persistConfig('user'), userReducer),
+    user: persistReducer<IUserState, IActions>(persistConfig('user'), userReducer),
     ...asyncReducers,
   };
 

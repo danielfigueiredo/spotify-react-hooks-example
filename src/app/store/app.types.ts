@@ -9,7 +9,7 @@ export type IState = {
 
 export type IActions = IUserActions;
 
-export type IReducers = ReducersMapObject<IState, any>;
+export type IReducers = ReducersMapObject<IState, IActions>;
 
 export type ILoadedState = Partial<IState>;
 

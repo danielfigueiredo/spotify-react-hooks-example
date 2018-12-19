@@ -3,10 +3,8 @@ import logger from 'redux-logger';
 
 import { createRootReducer } from './app.reducer';
 import { Persistor, persistStore } from 'redux-persist';
-import { ILoadedState } from './app.types';
+import { IState } from './app.types';
 
-const reduxStore = createStore(createRootReducer(), applyMiddleware(logger));
+export const store = createStore(createRootReducer(), applyMiddleware(logger)) as Store<IState>;
 
-export const persistor: Persistor = persistStore(reduxStore) as Persistor;
-
-export const store: Store<ILoadedState> = reduxStore;
+export const persistor: Persistor = persistStore(store) as Persistor;
