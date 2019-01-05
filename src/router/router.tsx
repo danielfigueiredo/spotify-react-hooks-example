@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  BrowserRouter,
-} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import { LoginRouter } from './login';
 import { HomeRouter } from './home';
+import { LoginRouter } from './login';
+import { SummaryRouter } from './summary/summary.router';
 
 
 // TODO investigate this weird issue that we need a wrapping div here
@@ -14,6 +13,7 @@ export const Router = () => (
     <div>
       <HomeRouter />
       <LoginRouter />
+      <SummaryRouter />
     </div>
   </BrowserRouter>
 );
