@@ -1,7 +1,6 @@
 import 'isomorphic-fetch';
 
 import { StringMap } from '../typescript';
-import { Promise } from 'es6-promise';
 
 export const defaultContentTypeHeaders: StringMap = {
   'Content-Type': 'application/json',
@@ -10,9 +9,8 @@ export const defaultContentTypeHeaders: StringMap = {
 export const handleResponse = (response: Response) => {
   if (response.ok) {
     return response.json();
-  } else {
-    return Promise.reject(response);
   }
+  return Promise.reject(response);
 };
 
 const buildDefaultHeaders = (headers?: StringMap): StringMap => ({
