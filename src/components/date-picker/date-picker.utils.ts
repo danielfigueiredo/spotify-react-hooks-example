@@ -1,4 +1,4 @@
-import { DayMap } from './date-picker.types';
+import { DayMap, Day } from './date-picker.types';
 import { DAY_OFFSET } from './date-picker.constants';
 
 export const toUTC = (date?: Date): number => {
@@ -21,6 +21,7 @@ export const utcToDate = (utc: number) => new Date(utc);
 export const daysInMonth = (year: number, month: number) => new Date(year, month + 1, 0).getDate();
 
 export const getDays = (
+  selectedDays: string[],
   year: number,
   month: number,
   utcMinDate: number,
@@ -36,11 +37,11 @@ export const getDays = (
     days[key] = {
       key,
       date,
+      day: day + DAY_OFFSET,
       utc: toUTC(date),
-      rawDate: [year, month, day + DAY_OFFSET],
-      isSelected: false,
+      isSelected: selectedDays.some(k => k === key),
       isEnabled:
-        utcMinDate || utcMaxDate ? toUTC(date) >= utcMinDate && toUTC(date) <= utcMaxDate : true,
+        utcMinDate ? toUTC(date) >= utcMinDate : utcMaxDate ? toUTC(date) <= utcMaxDate : true,
     };
     return days;
   }, {});

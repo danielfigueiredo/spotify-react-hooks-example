@@ -1,25 +1,25 @@
 import React from 'react';
 import { DatePicker } from 'src/components/date-picker/date-picker.component';
 import { Day } from 'src/components/date-picker/date-picker.types';
+import { ClassDatePicker } from 'src/components/class-datepicker/date-picker.component';
 
 export const Dashboard = () => {
-  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+  const lastWeek = new Date(new Date().setDate(new Date().getDate() - 7));
   const tomorrow = new Date(new Date().setDate(new Date().getDate() + 1));
 
   return (
     <div>
-      <div>summary route</div>
+      <div>Functional Date picker</div>
       <DatePicker
-        minDate={yesterday}
+        minDate={lastWeek}
         maxDate={tomorrow}
         onSelected={(startDate: any, endDate: any) => {
           console.log(startDate, endDate);
         }}
       />
 
-      <div>multiselect</div>
-      <DatePicker
-        multiselect
+      <div>Class Date picker</div>
+      <ClassDatePicker
         onSelected={(startDate: any, endDate: any) => {
           console.log(startDate, endDate);
         }}

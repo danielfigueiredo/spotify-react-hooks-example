@@ -1,6 +1,6 @@
 export type Day = {
   key: string;
-  rawDate: number[];
+  day: number;
   utc: number;
   date: Date;
   isSelected: boolean;

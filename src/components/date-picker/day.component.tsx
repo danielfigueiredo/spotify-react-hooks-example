@@ -1,7 +1,6 @@
 import React from 'react';
 
 export type DayProps = {
-  rawDate: number[];
   date: Date;
   day: number;
   onSelect: () => void;
