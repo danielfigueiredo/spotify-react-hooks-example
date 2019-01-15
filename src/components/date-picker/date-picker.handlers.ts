@@ -23,7 +23,7 @@ export const selectDay = ({ days, startDate, endDate, multiselect }: SelectDayPa
   setDays,
   setStartDate,
   setEndDate,
-]: any) => (dateKey: string) => () => {
+]: StateUpdateHandlers) => (dateKey: string) => () => {
   // don't select date if it's not enabled
   if (!days[dateKey].isEnabled) {
     return;
